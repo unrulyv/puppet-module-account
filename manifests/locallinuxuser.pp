@@ -4,7 +4,7 @@ define account::locallinuxuser(
   $fullname = 'Full Name',
   $expiry = absent,
   $gid  = $title,
-  $groups = [$title],
+  $groups = [],
   $home = "/home/${title}",
   $managehome = false,
   $password = '',
