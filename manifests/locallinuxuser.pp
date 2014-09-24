@@ -14,6 +14,11 @@ define account::locallinuxuser(
   $system = false,
 ) {
   if validate_re($title, '/^[a-z0-9_-]{3,16}$/') {
+    group { $gid:
+      ensure     => $ensure,
+      forcelocal => true,
+      system     => false,
+    }
     user { $title:
       ensure           => $ensure,
       name             => $title,
@@ -28,6 +33,7 @@ define account::locallinuxuser(
       password_min_age => $password_min_age,
       shell            => $shell,
       system           => $system,
+      require          => Group[$gid]
     }
   }
   else  {
