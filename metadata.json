@@ -1,0 +1,17 @@
+{
+  "name": "uom600-account",
+  "version": "0.1.0",
+  "author": "Linh Vu",
+  "summary": "Manage accounts",
+  "license": "Apache 2.0",
+  "source": "http://gitsvr.science.unimelb.edu.au/puppet-uom600-account.git",
+  "project_page": null,
+  "issues_url": null,
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
+  ]
+}
+
