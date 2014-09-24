@@ -13,7 +13,7 @@ define account::locallinuxuser(
   $shell = '/bin/bash',
   $system = false,
 ) {
-  validate_re($title, '/^[a-z0-9_-]{3,16}$/')
+  validate_re($title, '^[a-z0-9_-]{3,16}$')
   group { $gid:
     ensure     => $ensure,
     forcelocal => true,
