@@ -37,10 +37,14 @@
 #
 class account(
   $users = undef,
+  $groups = undef,
 ) {
   if $users != undef {
     validate_hash($users)
     create_resources(user, $users)
   }
-
+  if $groups != undef {
+    validate_hash($groups)
+    create_resources(user, $groups)
+  }
 }
