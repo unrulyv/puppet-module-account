@@ -38,6 +38,7 @@
 class account(
   $users = undef,
   $groups = undef,
+  $ssh_authorized_keys = undef,
 ) {
   if $users != undef {
     validate_hash($users)
@@ -46,5 +47,9 @@ class account(
   if $groups != undef {
     validate_hash($groups)
     create_resources(group, $groups)
+  }
+  if $ssh_authorized_keys != undef {
+    validate_hash($ssh_authorized_keys)
+    create_resources(ssh_authorized_key, $ssh_authorized_keys)
   }
 }
