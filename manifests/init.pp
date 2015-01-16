@@ -35,7 +35,12 @@
 #
 # Copyright 2014 Your name here, unless otherwise noted.
 #
-class account {
-
+class account(
+  $users = undef,
+) {
+  if $users != undef {
+    validate_hash($users)
+    create_resources(user, $users)
+  }
 
 }
