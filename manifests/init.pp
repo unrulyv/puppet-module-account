@@ -45,6 +45,6 @@ class account(
   }
   if $groups != undef {
     validate_hash($groups)
-    create_resources(user, $groups)
+    create_resources(group, $groups)
   }
 }
