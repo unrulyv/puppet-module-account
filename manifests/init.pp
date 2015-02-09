@@ -36,20 +36,20 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 class account(
-  $hash_users = $::account::params::users,
-  $hash_groups = $::account::params::groups,
-  $hash_ssh_authorized_keys = $::account::params::ssh_authorized_keys,
+  $users = undef,
+  $groups = undef,
+  $ssh_authorized_keys = undef,
 ) {
-  if $hash_users != undef {
-    validate_hash($hash_users)
-    create_resources(user, $hash_users)
+  if $users != undef {
+    validate_hash($users)
+    create_resources(user, $users)
   }
-  if $hash_groups != undef {
-    validate_hash($hash_groups)
-    create_resources(group, $hash_groups)
+  if $groups != undef {
+    validate_hash($groups)
+    create_resources(group, $groups)
   }
-  if $hash_ssh_authorized_keys != undef {
-    validate_hash($hash_ssh_authorized_keys)
-    create_resources(ssh_authorized_key, $hash_ssh_authorized_keys)
+  if $ssh_authorized_keys != undef {
+    validate_hash($ssh_authorized_keys)
+    create_resources(ssh_authorized_key, $ssh_authorized_keys)
   }
 }
