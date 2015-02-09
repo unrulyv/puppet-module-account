@@ -40,6 +40,9 @@ class account(
   $groups = undef,
   $ssh_authorized_keys = undef,
 ) {
+  $users = hiera_hash('account::users')
+  $groups = hiera_hash('account::groups')
+  $ssh_authorized_keys = hiera_hash('account::ssh_authorized_keys')
   if $users != undef {
     validate_hash($users)
     create_resources(user, $users)
