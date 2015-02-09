@@ -38,7 +38,7 @@
 class account(
   $users = undef,
   $groups = undef,
-  $ssh_authorized_keys = $::account::params::ssh_authorized_keys,
+  $m_ssh_authorized_keys = $::account::params::ssh_authorized_keys,
 ) inherits account::params {
   if $users != undef {
     validate_hash($users)
@@ -48,8 +48,8 @@ class account(
     validate_hash($groups)
     create_resources(group, $groups)
   }
-  if $ssh_authorized_keys != undef {
-    validate_hash($ssh_authorized_keys)
-    create_resources(ssh_authorized_key, $ssh_authorized_keys)
+  if $m_ssh_authorized_keys != undef {
+    validate_hash($m_ssh_authorized_keys)
+    create_resources(ssh_authorized_key, $m_ssh_authorized_keys)
   }
 }
