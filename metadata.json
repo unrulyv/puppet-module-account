@@ -1,10 +1,10 @@
 {
-  "name": "uom600-account",
+  "name": "unrulyv-account",
   "version": "0.3.6",
-  "author": "Linh Vu",
+  "author": "unrulyv",
   "summary": "Manage accounts",
   "license": "Apache 2.0",
-  "source": "http://gitsvr.science.unimelb.edu.au/puppet-uom600-account.git",
+  "source": "http://github.com/unrulyv/puppet-module-account.git",
   "project_page": null,
   "issues_url": null,
   "dependencies": [
